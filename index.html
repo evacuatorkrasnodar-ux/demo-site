@@ -19,10 +19,6 @@
 </head>
 
 <body>
-  <!-- Скрытый SEO-блок -->
-  <div class="seo-hidden">
-    создание сайтов от 1000 рублей мини сайт лендинг заказать сайт дешево разработка сайта Краснодар услуги сайт мастера сайт эвакуатора сайт услуги pwa сайт премиум дизайн чистый код html css js
-  </div>
 
   <div class="parallax-bg"></div>
 
@@ -121,30 +117,5 @@
     </div>
   </footer>
 
-  <!-- Анимации появления секций -->
-  <script>
-    const sections = document.querySelectorAll('section');
-    const options = { threshold: 0.2 };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, options);
-
-    sections.forEach(section => observer.observe(section));
-  </script>
-
-  <!-- Регистрация service worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sites-900/sw.js')
-          .catch((err) => console.log('SW error', err));
-      });
-    }
-  </script>
 </body>
 </html>
