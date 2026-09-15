@@ -95,11 +95,74 @@ section {
   box-shadow: 0 20px 50px rgba(0,0,0,0.18);
 }
 
+/* ===== Блоки фич ===== */
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+  padding: 25px;
+  width: 260px;
+}
+
+.feature .icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* ===== Блок Авито ===== */
+.avito-box {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+  padding: 30px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.avito-box h3 {
+  margin-top: 0;
+}
+
+/* ===== Контакты ===== */
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.contact-btn {
+  font-size: 16px;
+}
+
 /* ===== ФУТЕР ===== */
 footer {
   margin-top: 60px;
   background: #111;
   color: #fff;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px 20px;
+}
+
+.footer-col h4 {
+  margin-top: 0;
 }
 
 .footer-bottom {
