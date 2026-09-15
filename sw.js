@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sites-900-cache-v2';
+const CACHE_NAME = 'sites-900-cache-v3';
 
 const URLS_TO_CACHE = [
   '/sites-900/index.html',
@@ -34,12 +34,9 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
-      // Если есть в кеше — отдаём
       if (response) return response;
 
-      // Если нет — грузим из сети
       return fetch(event.request).then((networkResponse) => {
-        // Кешируем новые файлы (только GET)
         if (event.request.method === 'GET') {
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(event.request, networkResponse.clone());
