@@ -1,0 +1,9 @@
+{
+  "name": "Сайты — 900 ₽",
+  "short_name": "Сайты900",
+  "start_url": "/sites-900/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111111",
+  "icons": []
+}
