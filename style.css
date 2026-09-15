@@ -1,12 +1,11 @@
 /* Основной стиль сайта */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #ffffff;
+  background: linear-gradient(to bottom right, #ffffff, #f6f6f6);
   color: #1a1a1a;
   margin: 0;
   padding: 0;
 }
-
 
 /* Шапка */
 header {
@@ -28,55 +27,30 @@ p {
   margin: 0 auto;
 }
 
-
 /* Кнопки */
 .btn {
   display: inline-block;
   margin-top: 30px;
-  padding: 14px 32px;
-  background-color: #111;
+  padding: 16px 36px;
+  background: linear-gradient(135deg, #111, #333);
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 18px;
   font-weight: 600;
   transition: 0.25s;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 .btn:hover {
-  background-color: #000;
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, #000, #222);
+  transform: translateY(-3px);
 }
-
 
 /* Секции */
 section {
   padding: 60px 20px;
   text-align: center;
-}
-
-h2 {
-  color: #111;
-  margin-bottom: 20px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin: 10px 0;
-  font-size: 16px;
-}
-
-/* Контакты */
-#contact {
-  background-color: #f9f9f9;
-  border-top: 1px solid #eee;
-}
-section {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -85,4 +59,62 @@ section {
 section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Заголовки секций */
+h2 {
+  color: #111;
+  margin-bottom: 20px;
+  font-weight: 700;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37, #f7d774);
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* Карточки */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  padding: 30px;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.card p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Контакты */
+#contact {
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
 }
