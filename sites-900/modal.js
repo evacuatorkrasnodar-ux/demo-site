@@ -8,6 +8,18 @@ orderBtn.addEventListener('click', (e) => {
   e.preventDefault();
   overlay.style.display = 'block';
   modal.style.display = 'block';
+
+  // Анимация оператора
+  const typing = document.getElementById('operator-typing');
+  const status = document.getElementById('operator-status');
+
+  typing.style.display = 'block';
+  status.textContent = 'Печатает...';
+
+  setTimeout(() => {
+    typing.style.display = 'none';
+    status.textContent = 'Онлайн';
+  }, 2000);
 });
 
 // Закрытие по крестику
