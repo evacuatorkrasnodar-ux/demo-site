@@ -421,3 +421,91 @@ footer {
   background: linear-gradient(90deg, #c49b2f, #e8d36a);
   transform: translateY(-3px);
 }
+/* ===== МОДАЛЬНАЯ ФОРМА ЗАКАЗА ===== */
+
+#modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  display: none;
+  z-index: 998;
+  animation: fadeIn 0.4s ease;
+}
+
+#modal-order {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 600px;
+  padding: 40px;
+  display: none;
+  z-index: 999;
+  animation: modalPop 0.4s ease forwards;
+}
+
+@keyframes modalPop {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+#modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #555;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#modal-close:hover {
+  color: #000;
+  transform: scale(1.2);
+}
+
+.modal-content h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
+  transition: 0.3s;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
