@@ -1,12 +1,12 @@
 {
-  "name": "Сайты — 900 ₽",
-  "short_name": "Сайты900",
+  "name": "Сайты — от 1000 ₽",
+  "short_name": "Сайты1000",
   "start_url": "/sites-900/index.html",
   "scope": "/sites-900/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#111111",
-  "description": "Создание мини‑сайтов за 900 ₽. Чистый код, премиум‑дизайн, адаптив, PWA, домен и хостинг бесплатно.",
+  "description": "Создание мини‑сайтов от 1000 ₽. Скидка 10% через Авито. Чистый код, адаптив, PWA.",
   "icons": [
     {
       "src": "/sites-900/icon-192.png",
