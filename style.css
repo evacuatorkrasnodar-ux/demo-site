@@ -228,3 +228,80 @@ footer {
   font-size: 13px;
   color: #aaa;
 }
+
+/* ========================================================= */
+/* ===== ПРЕМИУМ МОДАЛЬНАЯ ФОРМА ЗАКАЗА (GLASS UI) ===== */
+/* ========================================================= */
+
+#modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: none;
+  z-index: 998;
+}
+
+#modal-order {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 600px;
+  padding: 40px;
+  display: none;
+  z-index: 999;
+  animation: modalShow 0.35s ease;
+}
+
+@keyframes modalShow {
+  from { opacity: 0; transform: translate(-50%, -45%) scale(0.95); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+#modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #555;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#modal-close:hover {
+  color: #000;
+  transform: scale(1.2);
+}
+
+/* Поля формы */
+.modal-content label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
