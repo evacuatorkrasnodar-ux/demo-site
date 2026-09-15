@@ -306,6 +306,20 @@ footer {
   justify-content: center;
   gap: 15px;
   margin-bottom: 30px;
+  position: relative;
+}
+
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #d4af37, #f7e27a);
+  border-radius: 2px;
+  transform: translateY(-50%);
+  opacity: 0.3;
 }
 
 .progress-step {
@@ -316,21 +330,26 @@ footer {
   font-weight: 600;
   color: #555;
   transition: 0.3s;
+  position: relative;
+  z-index: 1;
 }
 
 .progress-step.active {
-  background: #d4af37;
+  background: linear-gradient(90deg, #d4af37, #f7e27a);
   color: #000;
   transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
 }
 
 .order-form {
   max-width: 650px;
   margin: 0 auto;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  border: 1px solid rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
 }
 
 .form-step {
@@ -361,36 +380,7 @@ footer {
   font-size: 16px;
   font-family: 'Inter', sans-serif;
   background: #fafafa;
-}
-
-.next-btn {
-  margin-top: 30px;
-  width: 100%;
-  background: #111;
-  color: #fff;
-  padding: 16px;
-  border-radius: 12px;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
   transition: 0.3s;
-}
-
-.next-btn:hover {
-  background: #000;
-  transform: translateY(-3px);
-}
-/* ===== ПРЕМИУМ ЭФФЕКТЫ ===== */
-
-body {
-  background: linear-gradient(135deg, #f8f8f8 0%, #eaeaea 100%);
-  backdrop-filter: blur(6px);
-}
-
-.order-form {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .order-form input:focus,
@@ -399,36 +389,19 @@ body {
   outline: none;
   border-color: #d4af37;
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
-  transition: 0.3s;
-}
-
-.progress-bar {
-  position: relative;
-}
-
-.progress-bar::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  height: 4px;
-  width: 100%;
-  background: linear-gradient(90deg, #d4af37, #f7e27a);
-  border-radius: 2px;
-  transform: translateY(-50%);
-  opacity: 0.3;
-}
-
-.progress-step.active {
-  background: linear-gradient(90deg, #d4af37, #f7e27a);
-  color: #000;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
 }
 
 .next-btn {
+  margin-top: 30px;
+  width: 100%;
   background: linear-gradient(90deg, #111, #333);
   border: none;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .next-btn:hover {
@@ -436,6 +409,7 @@ body {
   transform: translateY(-3px);
 }
 
+/* Чуть премиума для общей кнопки */
 .btn {
   background: linear-gradient(90deg, #d4af37, #f7e27a);
   color: #000;
