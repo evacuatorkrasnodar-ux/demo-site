@@ -16,7 +16,7 @@
   <meta property="og:description" content="Мини‑сайты через чистый код. Быстро, аккуратно, без шаблонов.">
   <meta property="og:type" content="website">
 
-  <!-- Микроразметка JSON-LD -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -40,14 +40,14 @@
   }
   </script>
 
-  <!-- Шрифт -->
+  <!-- Шрифты -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стили -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/sites-900/style.css">
 
   <!-- PWA -->
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="/sites-900/manifest.json">
 </head>
 
 <body>
@@ -210,7 +210,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('/sites-900/sw.js')
           .catch((err) => console.log('SW error', err));
       });
     }
