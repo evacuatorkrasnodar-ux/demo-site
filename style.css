@@ -8,6 +8,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Параллакс‑фон */
 .parallax-bg {
   position: fixed;
   inset: 0;
@@ -15,19 +16,12 @@ body {
     radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.25) 0, transparent 50%),
     radial-gradient(circle at 80% 0%, rgba(0, 0, 0, 0.25) 0, transparent 55%);
   z-index: -2;
-  animation: parallaxMove 20s ease-in-out infinite;
-}
-
-@keyframes parallaxMove {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-40px); }
-  100% { transform: translateY(0); }
 }
 
 /* ===== ШАПКА ===== */
 header {
   text-align: center;
-  padding: 120px 20px;
+  padding: 140px 20px;
   background: #ffffff;
   box-shadow: 0 10px 40px rgba(0,0,0,0.08);
 }
@@ -51,25 +45,51 @@ p {
   display: inline-block;
   margin-top: 35px;
   padding: 16px 40px;
-  background: linear-gradient(90deg, #d4af37, #f7e27a);
-  color: #000;
+  background: #111;
+  color: white;
   text-decoration: none;
   border-radius: 12px;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   transition: 0.25s;
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 .btn:hover {
-  background: linear-gradient(90deg, #c49b2f, #e8d36a);
+  background: #000;
   transform: translateY(-4px);
 }
 
 /* ===== СЕКЦИИ ===== */
 section {
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== ЗАГОЛОВКИ ===== */
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+h2::after {
+  content: "";
+  width: 80px;
+  height: 5px;
+  background: #d4af37;
+  display: block;
+  margin: 14px auto 0;
+  border-radius: 3px;
 }
 
 /* ===== КАРТОЧКИ ===== */
@@ -91,59 +111,73 @@ section {
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.18);
 }
 
-/* ===== Блоки фич ===== */
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.card p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* ===== БЛОК "ЧТО ВХОДИТ" ===== */
 .features-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
   margin-top: 40px;
 }
 
 .feature {
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
-  padding: 25px;
-  width: 260px;
-}
-
-.feature .icon {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-/* ===== Блок Авито ===== */
-.avito-box {
-  max-width: 900px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
   padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* ===== ТЕКСТ АВИТО ===== */
+.avito-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
   text-align: left;
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
 }
 
-.avito-box h3 {
-  margin-top: 0;
+/* ===== КОНТАКТЫ ===== */
+#contact {
+  background: #fff;
+  border-top: 1px solid #ddd;
 }
 
-/* ===== Контакты ===== */
 .contact-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  margin-top: 25px;
-}
-
-.contact-btn {
-  font-size: 16px;
+  gap: 20px;
+  margin-top: 30px;
 }
 
 /* ===== ФУТЕР ===== */
@@ -153,18 +187,41 @@ footer {
   color: #fff;
 }
 
+/* Верх футера */
 .footer-top {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  padding: 30px 20px;
+  padding: 40px 20px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-col {
+  max-width: 260px;
 }
 
 .footer-col h4 {
-  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 18px;
 }
 
+.footer-col p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-col a {
+  color: #f7d774;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+/* Низ футера */
 .footer-bottom {
   text-align: center;
   padding: 20px;
