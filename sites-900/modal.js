@@ -1,33 +1,23 @@
-const modalOverlay = document.getElementById('modal-overlay');
-const modalOrder = document.getElementById('modal-order');
-const modalClose = document.getElementById('modal-close');
-const operatorTyping = document.getElementById('operator-typing');
-const operatorStatus = document.getElementById('operator-status');
-
+const overlay = document.getElementById('modal-overlay');
+const modal = document.getElementById('modal-order');
+const closeBtn = document.getElementById('modal-close');
 const orderBtn = document.getElementById('openModal');
 
 // Открытие модалки
 orderBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  modalOverlay.style.display = 'block';
-  modalOrder.style.display = 'block';
-
-  operatorTyping.style.display = 'block';
-  operatorStatus.textContent = 'Печатает...';
-
-  setTimeout(() => {
-    operatorTyping.style.display = 'none';
-    operatorStatus.textContent = 'Онлайн';
-  }, 2000);
+  overlay.style.display = 'block';
+  modal.style.display = 'block';
 });
 
-// Закрытие
-modalClose.addEventListener('click', () => {
-  modalOverlay.style.display = 'none';
-  modalOrder.style.display = 'none';
+// Закрытие по крестику
+closeBtn.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  modal.style.display = 'none';
 });
 
-modalOverlay.addEventListener('click', () => {
-  modalOverlay.style.display = 'none';
-  modalOrder.style.display = 'none';
+// Закрытие по клику на фон
+overlay.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  modal.style.display = 'none';
 });
