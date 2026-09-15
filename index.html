@@ -209,6 +209,42 @@
       <p>Мини‑лендинги под ключ · Краснодар</p>
     </div>
   </footer>
+<!-- МОДАЛЬНАЯ ФОРМА ЗАКАЗА -->
+<div id="modal-overlay"></div>
+
+<div id="modal-order">
+  <div class="modal-content">
+    <span id="modal-close">×</span>
+    <h2>Заказать сайт</h2>
+    <p>Заполните форму — я свяжусь с вами и уточню детали.</p>
+
+    <form id="modalForm" action="mailto:79996362202@ya.ru" method="post" enctype="text/plain">
+      <label>Ваше имя:</label>
+      <input type="text" name="Имя" required>
+
+      <label>Телефон:</label>
+      <input type="text" name="Телефон" required>
+
+      <label>Сколько экранов нужно?</label>
+      <select name="Количество экранов">
+        <option value="1 экран">1 экран — 1000 ₽</option>
+        <option value="2–3 экрана">2–3 экрана — 2100 ₽</option>
+        <option value="4–6 экранов">4–6 экранов — 3700 ₽</option>
+      </select>
+
+      <label>Нужен домен?</label>
+      <select name="Домен">
+        <option value="Не нужен">Не нужен</option>
+        <option value="Нужен">Нужен (+500 ₽)</option>
+      </select>
+
+      <label>Техническое задание:</label>
+      <textarea name="ТЗ" rows="5" placeholder="Опишите сайт: структура, цвета, примеры, ссылки..."></textarea>
+
+      <button type="submit" class="btn" style="margin-top:25px;">Отправить заявку</button>
+    </form>
+  </div>
+</div>
 
   <!-- Анимации появления секций -->
   <script>
