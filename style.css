@@ -380,3 +380,70 @@ footer {
   background: #000;
   transform: translateY(-3px);
 }
+/* ===== ПРЕМИУМ ЭФФЕКТЫ ===== */
+
+body {
+  background: linear-gradient(135deg, #f8f8f8 0%, #eaeaea 100%);
+  backdrop-filter: blur(6px);
+}
+
+.order-form {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+  transition: 0.3s;
+}
+
+.progress-bar {
+  position: relative;
+}
+
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #d4af37, #f7e27a);
+  border-radius: 2px;
+  transform: translateY(-50%);
+  opacity: 0.3;
+}
+
+.progress-step.active {
+  background: linear-gradient(90deg, #d4af37, #f7e27a);
+  color: #000;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+.next-btn {
+  background: linear-gradient(90deg, #111, #333);
+  border: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.next-btn:hover {
+  background: linear-gradient(90deg, #000, #222);
+  transform: translateY(-3px);
+}
+
+.btn {
+  background: linear-gradient(90deg, #d4af37, #f7e27a);
+  color: #000;
+  font-weight: 700;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #c49b2f, #e8d36a);
+  transform: translateY(-3px);
+}
