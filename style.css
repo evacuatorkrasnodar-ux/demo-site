@@ -1,57 +1,41 @@
 /* ===== ОСНОВНОЙ ФОН ===== */
 body {
   font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at top, #ffffff 0%, #f2f2f2 60%, #ececec 100%);
+  background: #f0f0f0;
   color: #1a1a1a;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
-/* ===== ФОНОВЫЕ ЭЛЕМЕНТЫ ===== */
-body::before {
-  content: "";
+/* Параллакс‑фон */
+.parallax-bg {
   position: fixed;
-  top: -200px;
-  right: -200px;
-  width: 500px;
-  height: 500px;
-  background: rgba(255, 215, 0, 0.15);
-  filter: blur(120px);
-  z-index: -1;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  bottom: -200px;
-  left: -200px;
-  width: 500px;
-  height: 500px;
-  background: rgba(0, 0, 0, 0.15);
-  filter: blur(160px);
-  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.25) 0, transparent 50%),
+    radial-gradient(circle at 80% 0%, rgba(0, 0, 0, 0.25) 0, transparent 55%);
+  z-index: -2;
 }
 
 /* ===== ШАПКА ===== */
 header {
   text-align: center;
   padding: 140px 20px;
-  background: linear-gradient(to bottom, #ffffff, #f7f7f7);
+  background: #ffffff;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
 }
 
 h1 {
   font-size: 52px;
   font-weight: 800;
   margin-bottom: 20px;
-  background: linear-gradient(90deg, #111, #555);
-  -webkit-background-clip: text;
-  color: transparent;
+  color: #111;
 }
 
 p {
   font-size: 20px;
-  color: #555;
+  color: #444;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -61,7 +45,7 @@ p {
   display: inline-block;
   margin-top: 35px;
   padding: 16px 40px;
-  background: linear-gradient(135deg, #111, #333);
+  background: #111;
   color: white;
   text-decoration: none;
   border-radius: 12px;
@@ -72,7 +56,7 @@ p {
 }
 
 .btn:hover {
-  background: linear-gradient(135deg, #000, #222);
+  background: #000;
   transform: translateY(-4px);
 }
 
@@ -95,20 +79,20 @@ h2 {
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 30px;
-  position: relative;
+  color: #111;
 }
 
 h2::after {
   content: "";
   width: 80px;
   height: 5px;
-  background: linear-gradient(90deg, #d4af37, #f7d774);
+  background: #d4af37;
   display: block;
   margin: 14px auto 0;
   border-radius: 3px;
 }
 
-/* ===== КАРТОЧКИ "ПОЧЕМУ 900 ₽" ===== */
+/* ===== КАРТОЧКИ ===== */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -118,14 +102,12 @@ h2::after {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
+  background: #fff;
   border-radius: 16px;
   box-shadow: 0 10px 35px rgba(0,0,0,0.12);
   padding: 35px;
   width: 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.4);
+  transition: 0.3s;
 }
 
 .card:hover {
@@ -153,8 +135,7 @@ h2::after {
 }
 
 .feature {
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
+  background: #fff;
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -171,11 +152,24 @@ h2::after {
   margin-bottom: 15px;
 }
 
+/* ===== ТЕКСТ АВИТО ===== */
+.avito-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
 /* ===== КОНТАКТЫ ===== */
 #contact {
-  background: rgba(255,255,255,0.6);
+  background: #fff;
   border-top: 1px solid #ddd;
-  backdrop-filter: blur(10px);
 }
 
 .contact-buttons {
@@ -186,16 +180,51 @@ h2::after {
   margin-top: 30px;
 }
 
-.contact-btn {
-  margin-top: 0;
-}
-
 /* ===== ФУТЕР ===== */
 footer {
-  text-align: center;
-  padding: 40px 20px;
+  margin-top: 60px;
   background: #111;
   color: #fff;
+}
+
+/* Верх футера */
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-col {
+  max-width: 260px;
+}
+
+.footer-col h4 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.footer-col p {
+  margin: 4px 0;
   font-size: 14px;
-  margin-top: 40px;
+  color: #ccc;
+}
+
+.footer-col a {
+  color: #f7d774;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+/* Низ футера */
+.footer-bottom {
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  color: #aaa;
 }
