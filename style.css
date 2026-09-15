@@ -76,3 +76,13 @@ li {
   background-color: #f9f9f9;
   border-top: 1px solid #eee;
 }
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
