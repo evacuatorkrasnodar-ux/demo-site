@@ -115,18 +115,6 @@
   }
   </script>
 
-  <!-- Скрытый SEO-блок -->
-  <style>
-    .seo-hidden {
-      position: absolute;
-      left: -9999px;
-      opacity: 0;
-    }
-  </style>
-  <div class="seo-hidden">
-    создание сайтов за 900 рублей мини сайт лендинг заказать сайт дешево разработка сайта Краснодар услуги сайт мастера сайт эвакуатора сайт услуги pwa сайт премиум дизайн чистый код html css js
-  </div>
-
   <!-- Шрифт -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
@@ -139,6 +127,11 @@
 
 <body>
 
+  <!-- Скрытый SEO-блок (теперь правильно — в body) -->
+  <div class="seo-hidden">
+    создание сайтов за 900 рублей мини сайт лендинг заказать сайт дешево разработка сайта Краснодар услуги сайт мастера сайт эвакуатора сайт услуги pwa сайт премиум дизайн чистый код html css js
+  </div>
+
   <div class="parallax-bg"></div>
 
   <header>
@@ -147,7 +140,6 @@
     <a href="#contact" class="btn">Заказать сайт</a>
   </header>
 
-  <!-- Почему 900 ₽ -->
   <section id="why">
     <h2>Почему 900 ₽?</h2>
     <div class="cards">
@@ -166,7 +158,6 @@
     </div>
   </section>
 
-  <!-- Что входит -->
   <section id="features">
     <h2>Что входит в 900 ₽</h2>
 
@@ -203,7 +194,6 @@
     </div>
   </section>
 
-  <!-- Описание услуги / Avito-текст -->
   <section id="avito">
     <h2>Описание услуги</h2>
 
@@ -244,7 +234,6 @@
     </div>
   </section>
 
-  <!-- Контакты -->
   <section id="contact">
     <h2>Контакты</h2>
     <p>Связаться со мной:</p>
@@ -262,7 +251,6 @@
     </div>
   </section>
 
-  <!-- Футер -->
   <footer>
     <div class="footer-top">
       <div class="footer-col">
@@ -287,7 +275,6 @@
     </div>
   </footer>
 
-  <!-- Анимации появления секций -->
   <script>
     const sections = document.querySelectorAll('section');
     const options = { threshold: 0.2 };
@@ -303,7 +290,6 @@
     sections.forEach(section => observer.observe(section));
   </script>
 
-  <!-- Регистрация service worker -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
