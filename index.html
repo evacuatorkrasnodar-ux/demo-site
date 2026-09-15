@@ -16,6 +16,30 @@
   <meta property="og:description" content="Мини‑сайты через чистый код. Быстро, аккуратно, без шаблонов.">
   <meta property="og:type" content="website">
 
+  <!-- Микроразметка JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Создание сайтов — 900 ₽",
+    "description": "Мини‑лендинги под ключ через чистый код. Адаптив, кнопки соцсетей, карта, PWA, домен и хостинг.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Краснодар",
+      "addressCountry": "RU"
+    },
+    "telephone": "+7-999-636-22-02",
+    "email": "79996362202@ya.ru",
+    "url": "https://evacuatorkrasnodar-ux.github.io/sites-900/",
+    "priceRange": "900 RUB",
+    "sameAs": [
+      "https://t.me/+79996362202",
+      "https://wa.me/79996362202",
+      "https://vk.com"
+    ]
+  }
+  </script>
+
   <!-- Шрифт -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
@@ -149,6 +173,16 @@
     }, options);
 
     sections.forEach(section => observer.observe(section));
+  </script>
+
+  <!-- Регистрация service worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .catch((err) => console.log('SW error', err));
+      });
+    }
   </script>
 
 </body>
