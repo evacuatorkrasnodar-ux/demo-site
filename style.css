@@ -299,3 +299,84 @@ footer {
   left: -9999px;
   opacity: 0;
 }
+/* ===== ПРЕМИУМ ФОРМА ЗАКАЗА ===== */
+
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.progress-step {
+  padding: 10px 18px;
+  background: #eee;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  transition: 0.3s;
+}
+
+.progress-step.active {
+  background: #d4af37;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.order-form {
+  max-width: 650px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.form-step {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.order-form label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
+}
+
+.next-btn {
+  margin-top: 30px;
+  width: 100%;
+  background: #111;
+  color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.next-btn:hover {
+  background: #000;
+  transform: translateY(-3px);
+}
