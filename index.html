@@ -5,7 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Создание сайтов — 900 ₽</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Основной стиль сайта */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #ffffff, #f6f6f6);
+      color: #1a1a1a;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Шапка */
+    header {
+      text-align: center;
+      padding: 120px 20px;
+      background: linear-gradient(to bottom, #ffffff, #f3f3f3);
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Кнопки */
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, #111, #333);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      transition: 0.25s;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #000, #222);
+      transform: translateY(-3px);
+    }
+
+    /* Секции */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: #111;
+      margin-bottom: 20px;
+      font-weight: 700;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #d4af37, #f7d774);
+      display: block;
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Карточки */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      padding: 30px;
+      width: 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .card p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    /* Контакты */
+    #contact {
+      background-color: #f9f9f9;
+      border-top: 1px solid #eee;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -16,11 +136,20 @@
 
   <section id="why">
     <h2>Почему 900 ₽?</h2>
-    <ul>
-      <li>Без шаблонов и посредников</li>
-      <li>Чистый HTML, CSS, JS</li>
-      <li>Быстро и аккуратно</li>
-    </ul>
+    <div class="cards">
+      <div class="card">
+        <h3>Без шаблонов</h3>
+        <p>Каждый сайт пишется вручную — чистый код, без конструкторов.</p>
+      </div>
+      <div class="card">
+        <h3>Чистый HTML + CSS + JS</h3>
+        <p>Максимальная скорость загрузки и адаптив под телефон.</p>
+      </div>
+      <div class="card">
+        <h3>Быстро и аккуратно</h3>
+        <p>Сайт готов за 1 день, дизайн ровный и современный.</p>
+      </div>
+    </div>
   </section>
 
   <section id="features">
@@ -40,20 +169,20 @@
     <a href="https://t.me/твой_телеграм" class="btn">Telegram</a>
     <a href="https://wa.me/твой_номер" class="btn">WhatsApp</a>
   </section>
-</body>
+
   <script>
-  const sections = document.querySelectorAll('section');
-  const options = { threshold: 0.2 };
+    const sections = document.querySelectorAll('section');
+    const options = { threshold: 0.2 };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, options);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, options);
 
-  sections.forEach(section => observer.observe(section));
-</script>
-
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
 </html>
