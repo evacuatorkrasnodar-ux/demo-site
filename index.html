@@ -57,7 +57,7 @@
   <header>
     <h1>Создание сайтов через код — 900 ₽</h1>
     <p>Мини‑лендинги под ключ. Чистый фронтенд, аккуратный дизайн, без шаблонов.</p>
-    <a href="#" id="openModal" class="btn">Заказать сайт</a>
+    <a href="#contact" class="btn">Заказать сайт</a>
   </header>
 
   <!-- Почему 900 ₽ -->
@@ -150,7 +150,7 @@
         — Современный премиум‑дизайн<br>
         — Адаптив под телефон<br>
         — Кнопки соцсетей (Telegram, WhatsApp, VK)<br>
-        — Карта и форма заявки<br>
+        — Карта<br>
         — Установка как приложение (PWA)<br>
         — Домен и хостинг бесплатно (GitHub Pages)<br><br>
 
@@ -211,36 +211,6 @@
     </div>
   </footer>
 
-  <!-- МОДАЛЬНОЕ ОКНО -->
-  <div id="modal-overlay"></div>
-
-  <div id="modal-order">
-    <div class="modal-content">
-      <span id="modal-close">×</span>
-      <h2>Оставить заявку</h2>
-
-      <form action="mailto:79996362202@ya.ru" method="post" enctype="text/plain">
-        <label>Ваше имя:</label>
-        <input type="text" name="Имя" required>
-
-        <label>Телефон:</label>
-        <input type="text" name="Телефон" required>
-
-        <label>Тариф:</label>
-        <select name="Тариф">
-          <option value="Базовый — 900 ₽">Базовый — 900 ₽</option>
-          <option value="Стандарт — 2100 ₽">Стандарт — 2100 ₽</option>
-          <option value="Премиум — 3700 ₽">Премиум — 3700 ₽</option>
-        </select>
-
-        <label>Техническое задание:</label>
-        <textarea name="ТЗ" rows="5" placeholder="Опишите сайт: структура, цвета, примеры..."></textarea>
-
-        <button type="submit" class="btn" style="margin-top:25px;">Отправить заявку</button>
-      </form>
-    </div>
-  </div>
-
   <!-- Анимации появления секций -->
   <script>
     const sections = document.querySelectorAll('section');
@@ -255,30 +225,6 @@
     }, options);
 
     sections.forEach(section => observer.observe(section));
-  </script>
-
-  <!-- Модалка -->
-  <script>
-    const overlay = document.getElementById('modal-overlay');
-    const modal = document.getElementById('modal-order');
-    const closeBtn = document.getElementById('modal-close');
-    const openBtn = document.getElementById('openModal');
-
-    openBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      overlay.style.display = 'block';
-      modal.style.display = 'block';
-    });
-
-    closeBtn.addEventListener('click', () => {
-      overlay.style.display = 'none';
-      modal.style.display = 'none';
-    });
-
-    overlay.addEventListener('click', () => {
-      overlay.style.display = 'none';
-      modal.style.display = 'none';
-    });
   </script>
 
   <!-- Регистрация service worker -->
