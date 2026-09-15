@@ -226,6 +226,12 @@ h2::after {
   font-size: 17px;
 }
 
+.avito-box hr {
+  margin: 30px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
 /* ===== КОНТАКТЫ ===== */
 #contact {
   background: #fff;
@@ -247,7 +253,6 @@ footer {
   color: #fff;
 }
 
-/* Верх футера */
 .footer-top {
   display: flex;
   flex-wrap: wrap;
@@ -281,7 +286,6 @@ footer {
   text-decoration: underline;
 }
 
-/* Низ футера */
 .footer-bottom {
   text-align: center;
   padding: 20px;
