@@ -109,7 +109,9 @@ footer {
   color: #aaa;
 }
 
-/* ===== МОДАЛЬНАЯ ФОРМА ===== */
+/* ========================================================= */
+/* ===== ПРЕМИУМ МОДАЛЬНАЯ ФОРМА ЗАКАЗА (ПОЛНАЯ ВЕРСИЯ) ===== */
+/* ========================================================= */
 
 #modal-overlay {
   position: fixed;
@@ -133,6 +135,12 @@ footer {
   padding: 40px;
   display: none;
   z-index: 999;
+  animation: modalShow 0.35s ease;
+}
+
+@keyframes modalShow {
+  from { opacity: 0; transform: translate(-50%, -45%) scale(0.95); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
 #modal-close {
@@ -150,7 +158,7 @@ footer {
   transform: scale(1.2);
 }
 
-/* Оператор */
+/* ===== Оператор ===== */
 .modal-operator {
   display: flex;
   align-items: center;
@@ -193,7 +201,7 @@ footer {
   display: none;
 }
 
-/* Поля */
+/* ===== Поля формы ===== */
 .modal-content label {
   display: block;
   margin-top: 15px;
