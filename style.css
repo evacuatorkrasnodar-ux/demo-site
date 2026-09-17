@@ -1,41 +1,57 @@
 /* ===== ОСНОВНОЙ ФОН ===== */
 body {
   font-family: 'Inter', sans-serif;
-  background: #f0f0f0;
+  background: radial-gradient(circle at top, #ffffff 0%, #f2f2f2 60%, #ececec 100%);
   color: #1a1a1a;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
-/* Параллакс‑фон */
-.parallax-bg {
+/* ===== ФОНОВЫЕ ЭЛЕМЕНТЫ ===== */
+body::before {
+  content: "";
   position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.25) 0, transparent 50%),
-    radial-gradient(circle at 80% 0%, rgba(0, 0, 0, 0.25) 0, transparent 55%);
-  z-index: -2;
+  top: -200px;
+  right: -200px;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 215, 0, 0.15);
+  filter: blur(120px);
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -200px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  background: rgba(0, 0, 0, 0.15);
+  filter: blur(160px);
+  z-index: -1;
 }
 
 /* ===== ШАПКА ===== */
 header {
   text-align: center;
   padding: 140px 20px;
-  background: #ffffff;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  background: linear-gradient(to bottom, #ffffff, #f7f7f7);
 }
 
 h1 {
   font-size: 52px;
   font-weight: 800;
   margin-bottom: 20px;
-  color: #111;
+  background: linear-gradient(90deg, #111, #555);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 p {
   font-size: 20px;
-  color: #444;
+  color: #555;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -45,7 +61,7 @@ p {
   display: inline-block;
   margin-top: 35px;
   padding: 16px 40px;
-  background: #111;
+  background: linear-gradient(135deg, #111, #333);
   color: white;
   text-decoration: none;
   border-radius: 12px;
@@ -56,7 +72,7 @@ p {
 }
 
 .btn:hover {
-  background: #000;
+  background: linear-gradient(135deg, #000, #222);
   transform: translateY(-4px);
 }
 
@@ -79,20 +95,20 @@ h2 {
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 30px;
-  color: #111;
+  position: relative;
 }
 
 h2::after {
   content: "";
   width: 80px;
   height: 5px;
-  background: #d4af37;
+  background: linear-gradient(90deg, #d4af37, #f7d774);
   display: block;
   margin: 14px auto 0;
   border-radius: 3px;
 }
 
-/* ===== КАРТОЧКИ ===== */
+/* ===== КАРТОЧКИ "ПОЧЕМУ 900 ₽" ===== */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -102,12 +118,14 @@ h2::after {
 }
 
 .card {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
   border-radius: 16px;
   box-shadow: 0 10px 35px rgba(0,0,0,0.12);
   padding: 35px;
   width: 300px;
-  transition: 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.4);
 }
 
 .card:hover {
@@ -135,7 +153,8 @@ h2::after {
 }
 
 .feature {
-  background: #fff;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -152,24 +171,11 @@ h2::after {
   margin-bottom: 15px;
 }
 
-/* ===== ТЕКСТ АВИТО ===== */
-.avito-box {
-  background: #fff;
-  padding: 40px;
-  border-radius: 16px;
-  max-width: 800px;
-  margin: 0 auto;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-  text-align: left;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #333;
-}
-
 /* ===== КОНТАКТЫ ===== */
 #contact {
-  background: #fff;
+  background: rgba(255,255,255,0.6);
   border-top: 1px solid #ddd;
+  backdrop-filter: blur(10px);
 }
 
 .contact-buttons {
@@ -180,128 +186,16 @@ h2::after {
   margin-top: 30px;
 }
 
+.contact-btn {
+  margin-top: 0;
+}
+
 /* ===== ФУТЕР ===== */
 footer {
-  margin-top: 60px;
+  text-align: center;
+  padding: 40px 20px;
   background: #111;
   color: #fff;
-}
-
-/* Верх футера */
-.footer-top {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  padding: 40px 20px 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.footer-col {
-  max-width: 260px;
-}
-
-.footer-col h4 {
-  margin-bottom: 12px;
-  font-size: 18px;
-}
-
-.footer-col p {
-  margin: 4px 0;
   font-size: 14px;
-  color: #ccc;
-}
-
-.footer-col a {
-  color: #f7d774;
-  text-decoration: none;
-}
-
-.footer-col a:hover {
-  text-decoration: underline;
-}
-
-/* Низ футера */
-.footer-bottom {
-  text-align: center;
-  padding: 20px;
-  font-size: 13px;
-  color: #aaa;
-}
-
-/* ========================================================= */
-/* ===== ПРЕМИУМ МОДАЛЬНАЯ ФОРМА ЗАКАЗА (GLASS UI) ===== */
-/* ========================================================= */
-
-#modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
-  display: none;
-  z-index: 998;
-}
-
-#modal-order {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(18px);
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  width: 90%;
-  max-width: 600px;
-  padding: 40px;
-  display: none;
-  z-index: 999;
-  animation: modalShow 0.35s ease;
-}
-
-@keyframes modalShow {
-  from { opacity: 0; transform: translate(-50%, -45%) scale(0.95); }
-  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-}
-
-#modal-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 28px;
-  color: #555;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#modal-close:hover {
-  color: #000;
-  transform: scale(1.2);
-}
-
-/* Поля формы */
-.modal-content label {
-  display: block;
-  margin-top: 15px;
-  font-weight: 600;
-}
-
-.modal-content input,
-.modal-content select,
-.modal-content textarea {
-  width: 100%;
-  padding: 12px;
-  margin-top: 6px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  background: #fafafa;
-  font-size: 15px;
-  transition: 0.3s;
-}
-
-.modal-content input:focus,
-.modal-content select:focus,
-.modal-content textarea:focus {
-  border-color: #d4af37;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+  margin-top: 40px;
 }
