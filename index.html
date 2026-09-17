@@ -16,43 +16,17 @@
   <meta property="og:description" content="Мини‑сайты через чистый код. Быстро, аккуратно, без шаблонов.">
   <meta property="og:type" content="website">
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Создание сайтов — 900 ₽",
-    "description": "Мини‑лендинги под ключ через чистый код. Адаптив, кнопки соцсетей, карта, PWA, домен и хостинг.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Краснодар",
-      "addressCountry": "RU"
-    },
-    "telephone": "+7-999-636-22-02",
-    "email": "79996362202@ya.ru",
-    "url": "https://evacuatorkrasnodar-ux.github.io/sites-900/",
-    "priceRange": "900 RUB",
-    "sameAs": [
-      "https://t.me/+79996362202",
-      "https://wa.me/79996362202",
-      "https://vk.com"
-    ]
-  }
-  </script>
-
-  <!-- Шрифты -->
+  <!-- Шрифт -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Стили -->
-  <link rel="stylesheet" href="/sites-900/style.css">
+  <link rel="stylesheet" href="style.css">
 
   <!-- PWA -->
-  <link rel="manifest" href="/sites-900/manifest.json">
+  <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
-
-  <div class="parallax-bg"></div>
 
   <header>
     <h1>Создание сайтов через код — 900 ₽</h1>
@@ -116,58 +90,6 @@
     </div>
   </section>
 
-  <!-- Тарифы -->
-  <section id="pricing">
-    <h2>Тарифы</h2>
-
-    <div class="cards">
-      <div class="card">
-        <h3>Базовый — 900 ₽</h3>
-        <p>1 экран, адаптив, кнопки соцсетей, современный дизайн.</p>
-      </div>
-
-      <div class="card">
-        <h3>Стандарт — 2100 ₽</h3>
-        <p>2–3 экрана, карта, PWA, домен включён.</p>
-      </div>
-
-      <div class="card">
-        <h3>Премиум — 3700 ₽</h3>
-        <p>4–6 экранов, SEO‑описание, PWA, домен включён.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Текст под Авито -->
-  <section id="avito">
-    <h2>Текст для Авито</h2>
-    <div class="avito-box">
-      <p>
-        Создание аккуратных мини‑сайтов (лендингов) за 900 ₽.<br><br>
-
-        — Чистый код: HTML, CSS, JS<br>
-        — Без конструкторов и шаблонов<br>
-        — Современный премиум‑дизайн<br>
-        — Адаптив под телефон<br>
-        — Кнопки соцсетей (Telegram, WhatsApp, VK)<br>
-        — Карта<br>
-        — Установка как приложение (PWA)<br>
-        — Домен и хостинг бесплатно (GitHub Pages)<br><br>
-
-        Тарифы:<br>
-        • Базовый — 900 ₽<br>
-        • Стандарт — 2100 ₽<br>
-        • Премиум — 3700 ₽<br><br>
-
-        Связь:<br>
-        Телефон: +7 999 636‑22‑02<br>
-        Telegram: @+79996362202<br>
-        WhatsApp: +7 999 636‑22‑02<br>
-        Почта: 79996362202@ya.ru
-      </p>
-    </div>
-  </section>
-
   <!-- Контакты -->
   <section id="contact">
     <h2>Контакты</h2>
@@ -188,27 +110,8 @@
 
   <!-- Футер -->
   <footer>
-    <div class="footer-top">
-      <div class="footer-col">
-        <h4>Сайты за 900 ₽</h4>
-        <p>Мини‑лендинги через чистый код. Без шаблонов, без конструкторов.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Контакты</h4>
-        <p>Телефон: <a href="tel:+79996362202">+7 999 636‑22‑02</a></p>
-        <p>Почта: <a href="mailto:79996362202@ya.ru">79996362202@ya.ru</a></p>
-      </div>
-      <div class="footer-col">
-        <h4>Соцсети</h4>
-        <p><a href="https://t.me/+79996362202">Telegram</a></p>
-        <p><a href="https://wa.me/79996362202">WhatsApp</a></p>
-        <p><a href="https://vk.com">ВКонтакте</a></p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Создание сайтов — 900 ₽ | Roman</p>
-      <p>Мини‑лендинги под ключ · Краснодар</p>
-    </div>
+    <p>© 2026 Создание сайтов — 900 ₽ | Roman</p>
+    <p>Мини‑лендинги через чистый код</p>
   </footer>
 
   <!-- Анимации появления секций -->
@@ -225,16 +128,6 @@
     }, options);
 
     sections.forEach(section => observer.observe(section));
-  </script>
-
-  <!-- Регистрация service worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sites-900/sw.js')
-          .catch((err) => console.log('SW error', err));
-      });
-    }
   </script>
 
 </body>
