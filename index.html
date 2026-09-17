@@ -227,13 +227,6 @@
   </script>
 
   <!-- Регистрация service worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sites-900/sw.js')
-          .catch((err) => console.log('SW error', err));
-      });
-    }
-  </script>
+ 
 </body>
 </html>
